@@ -1,0 +1,14 @@
+#######################################################
+1. Select anyconnect file based on your operating system. For iOS, download anyconnect from apply store directly.
+2. unzip the file. Install anyconnect software under instruction. 
+3. Open software. Input <server name>:<port>. Contact administrator to get server ip and port number. 
+4. Connect to server. Software will report warning, and will warn that server is untrusted. Go setting, uncheck "Block connections to untrusted servers". Then go back to connection. 
+5. Input username and password, connect!
+
+
+#######################################################
+1. 根据版本选择合适的anyconnect安装包，iOS请直接appstore下载anyconnect.
+2. 解压文件，根据提示安装，可能需要提供管理员权限。
+3. 打开软件，输入服务器名称和端口, 联系管理员获取服务器名称和端口。
+4. 连接服务器。这里可能会有很多警告，需要进入anyconnect的设置里，取消勾选“阻止不信任的服务器连接”。
+5. 输入你的用户名密码，连接！

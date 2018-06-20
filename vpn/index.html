@@ -1,0 +1,147 @@
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title> secret place </title>
+<style>
+</style>
+	</head>
+	<body>
+		<h1>Secret Place for fun</h1>
+		<div class="main-body">
+			<p>
+			提供四种连接方式：<b>IKEV2</b>，<b>AnyConnect</b>， <b>Shadowsocks(ss)</b>和<b>ShadowsocksR(ssr)</b>。<br><br>
+			无论哪种，都具有传输的加密保护，请放心使用。四种连接方法分为VPN和PROXY两类，IKEV2和AnyConnect属于VPN，Shadowsocks和ShadowsocksR属于加密的PROXY。<br>
+			对于anyconnect和ikev2协议的VPN，<b>默认所有账户开通</b>，激活后直接可用。<br>
+			对于需要使用ss和ssr的同学，请有需要请联系管理员，<b>不默认开通</b>。说明在本页最末尾。这个的配置相对以上两个稍微繁琐点，需要额外阅读说明文档，请耐心完成操作。<br>
+			本服务器不推荐用来打外服游戏，但如有需要可以和管理员联系。<br><br><br>
+			这里稍微讲下两者的区别。VPN属于将数据加密传输到虚拟的局域网中，在虚拟局域网中有另外一台连接外网的主机，当你请求局域网没有的数据时，外网主机会帮你请求数据，然后加密传输给你。这个过程比较复杂，加密传输速度也比较收到网络状态影响。但是因为很多外企都在使用这种技术，GFW很难完全屏蔽这种连接，属于比较安全的连接。PROXY属于网络层的下两层的代理请求数据工作，速度比VPN快得多，但是问题就是因为他的作用基本只有翻墙，所以已经成为封杀主要目标。虽然加密的PROXY已经一定程度上解决了一些被封杀的问题，但是因为流量特征明显，所以还是很容易暴露。PROXY的连接大家还是且用且珍惜。<br>
+			虽然VPN给服务器带来的负担更大，但是为了大家上网安全，还是优先首先推荐使用VPN进行连接。VPN中推荐IKEV2进行连接尝试，因为IKEV2大部分只要用系统内置功能就能实现连接，并且连接也很稳定。仅当IKEV2无法使用时，再尝试AnyConnect。<br>
+			<br><br>
+
+			</p>
+			<hr>
+			<h2> IKEV2 </h2>
+			<h4> IKEV2 大部分可以使用内置VPN进行连接，首推</h4>
+			<p> <a href="./ikev2/IKEV2_Win7_Win8.pdf" download>WIN 7, 8, 8.1 系统</a>
+			Warning：Windows系统内置VPN不支持拆包，部分深墙网络可能认证失败。如果失败，请尝试使用anyconnect。<br>
+			1. 在建立连接时，服务器名请填写micou.top , 然后域名留空。填写你的用户名和密码即可使用。<br>
+			</p>
+			<p><a href="./ikev2/IKEV2_Win10_powershell.ps1" download>WIN 10 系统</a>
+			Warning：Windows系统内置VPN不支持拆包，部分深墙网络可能认证失败。如果失败，请尝试使用anyconnect。<br>
+			1. 右键解压出来的文件，选择用powershell运行，给予管理员权限， VPN将自动进行配置<br>
+			2. 再点开任务栏网络的图标，里边多了一个VPN连接。选择连接，输入用户名密码即可。<br>
+			</p>
+			<p><a href="./ikev2/IKEV2_Android_strongswan.apk" download>Android 4.0+</a>
+			Info: 安卓需要额外安装app，app来自google play商店，此处直接提供apk包，更新日期 2017/09/20<br>
+			1. 运行apk文件，安装strongswan。<br>
+			2. 打开软件，加配置文件<br>
+			3. VPN类型选择IKev2（应该是默认的，不用修改）。服务器名填写micou.top  然后填写用户名密码， 保存即可<br>
+			4. 用保存的配置文件就能连接VPN了.<br>
+			</p>
+			<p><a href="./ikev2/IKEV2_Mac_iOS.mobileconfig" download>Mac & iOS </a>
+			Warning： 记得关闭自动连接<br>
+			1. 在手机或者电脑双击运行 vpn-ios-or-mac.mibileconfig<br>
+			2. 然后输入用户名密码即可使用。<br>
+			3. 记得在设置里关掉VPN的自动连接。不然会一直使用VPN连接访问所有网络，可能导致网络访问问题.<br>
+			</p>
+			<p><a href="./ikev2/IKEV2_strongswan_ubuntu_client.sh" download>Ubuntu</a>
+			Info：推荐使用ubuntu 17。其他版本还未测试过。<br>
+			1. 运行chmod 755 vpn-ubuntu-client.sh<br>
+			2. 运行vpn-ubuntu-client.sh<br>
+			3. 安装完成后输入用户名密码即可<br>
+			</p>
+			<p>For more detailed information, check <a href="./ikev2/IKEV2_Instruction.txt" download>here</a></p>
+
+			<hr>
+			<h2> AnyConnect </h2>
+			<h4> AnyConnect 因为是商用的，所以基本不太可能被封禁。但是所有平台都需要额外下载Cisco的AnyConnect软件才能使用。</h4>
+			<p>
+			20180204 更新： 现在同时有 v1.micou.top 和 v2.micou.top 两个服务器提供anyconnect服务，都使用443端口。<br>
+			<br>
+			1. 根据版本选择合适的anyconnect安装包，iOS请直接appstore下载anyconnect.<br>
+			2. 文件，根据提示安装，可能需要提供管理员权限。<br>
+			3. 打开软件，输入服务器名 v1.micou.top 或者 v2.micou.top。 如果无响应请在后边加“:443”， 如 v1.micou.top:443 .如果还是不正确请联系管理员获取服务器名和端口。<br>
+			4. 连接服务器。这里如果使用 v1(v2).micou.top 新服务器名就不会有警告，而使用旧的 micou.top 地址需要进入anyconnect的设置里，取消勾选阻止不信任的服务器连接。<br>
+			5. 输入你的用户名密码，连接！<br>
+			<br>
+			<p>
+			连接错误说明：<br>
+			<ul>
+			<li>1. 如果是提示服务器地址不正确，请确认你输入的服务器地址。</li>
+			<li>2. 如果是提示connection to security gateway错误， 可能是因为你正在尝试使用同一个账户多地登陆，请确认你的账号没被同时使用。如果在确认你的账号没被同时使用的情况下，还是出现这个问题，可能是因为服务器没能及时退出为你的上一个连接的服务，请重启软件，等待并重试</li>
+			<li>3. 如果还是有错误信息，请联系管理员。</li>
+			</ul>
+			</p>
+			<a href="./anyconnect/anyConnect_Windows.msi" download>Windows 系统</a><br>
+			<a href="https://itunes.apple.com/cn/app/cisco-anyconnect/id1135064690">iOS 系统 App Store 链接</a><br>
+			<a href="./anyconnect/anyConnect_Android.apk" download>Android 系统</a><br>
+			<a href="./anyconnect/anyConnect_macOS.dmg"download>Mac OS 64位</a> Warning: 对于Mac用户，在进行安装时被要求选择多个包，这里只要选第一个包就行。多装包反而可能导致不能使用。<br>
+			<a href="./anyconnect/anyConnect_macOS_i386.dmg" download>Mac OS 32位</a> Warning: 对于Mac用户，在进行安装时被要求选择多个包，这里只要选第一个包就行。多装包反而可能导致不能使用。<br>
+			<a href="./anyconnect/openconnect708_Linux64.tar.gz" download>Linux 64位</a> Warning: Linux package require professional setting.Need to configure and compile from source file, Please contact administrator for instructions. <br>
+			<br>
+			For more detailed information, check <a href="./anyconnect/Instruction.txt" download>here</a><br>
+			</p>
+			<hr>
+			<h2>Shadowsocks(SS)</h2>
+			<p>
+			Shadowsocks的使用也主要是配置客户端。但是他的电脑版配置主要分为配置本地代理和配置浏览器代理。对于手机用户，需要使用全局代理，具体内容还需要多加摸索。<br>
+			<ul>
+			Shadowsocks服务器配置
+			<li>服务器地址:www.micou.top</li>
+			<li>服务器端口:请联系管理员</li>
+			<li>服务器密码:请联系管理员</li>
+			<li>服务器加密方式:aes-256-gcm</li>
+			</ul>
+			配置请参考以下链接。文中软件下载链接已经失效，请用本页面提供的链接进行下载。<br>
+			<a href="http://www.jeyzhang.com/how-to-install-and-setup-shadowsocks-client-in-different-os.html">多平台配置说明文档（Windows, Mac, Linux, iOS, Android）</a><br>
+			<p>
+			<b>Windows</b><br>
+			对于微软操作系统，你需要一个shadowsocks的客户端和一个配置好的浏览器。<br>
+			Shadowsocks客户端连接在<a href="./shadowsocks/Shadowsocks-Windows-4.0.7.zip" download>这里</a>(Version:4.0.7 UpdateDate:20180113)。<br>
+			对于Chrome中的插件，请搜索名字“proxy switchsharp”，说明文档中的名字可能会搜索不到。<br>
+			<p>
+			<b>Android</b><br>
+			对于安卓设备，需要下载apk然后按照以上给的配置进行设置。APK链接在 <a href="./shadowsocks/Shadowsocks-Android-4.1.8.apk" download>这里</a>(Version: 4.1.8  UpdateDate:20180311)<br>
+			</p>
+			<p>
+			<b>Mac</b><br>
+			对于Mac设备，没有太多的说明文档。需要时请联系管理员。Shadowsocks的客户端在 <a href="./shadowsocks/Shadowsocks-MacNG-1.7.0.zip" download>这里</a>(Version: 1.7.0  UpdateDate:20180113)<br>
+			</p>
+			<p>
+			<b>iOS</b><br>
+			对于iOS的用户，在Apple Store的应用是已经被封杀了，只能用一些特定版本。你可以用你自己买的客户端，或者用以下提供的一个简单版本的客户端。但是不保证连接和连接质量。应用作者已经快3年没有更新了。软件链接在 <a href="./shadowsocks/Shadowsocks-iOS-0.3.2-3.deb" download>这里</a>(Version:0.3.2  UpdateDate:20180118  BackupLink:http://apt.thebigboss.org/onepackage.php?bundleid=com.linusyang.shadowsocks)<br>
+			</p>
+			<p>
+			<b>Linux</b><br>
+			对于用Linux的同学，应该能在apt中获取到合适的源，如有需要请连接管理员。
+			</p>
+			</p>
+			<hr>
+			<h2>ShadowsocksR(SSR)</h2>
+			<p>
+			ShadowsocksR基本是基于Shadowsocks基础上进行的开发，新增了混淆和用户管理等功能。速度和SS差不多，看个人需求进行选择。不默认开通，有需要联系管理员。<br>
+			<ul>
+			Shadowsocks服务器配置
+			<li>服务器地址: <b>www.micou.top</b></li>
+			<li>服务器端口: <b>请联系管理员</b></li>
+			<li>服务器密码: <b>请联系管理员</b></li>
+			<li>服务器method加密方式: <b>aes-128-ctr</b></li>
+			<li>服务器protocol协议: <b>auth_aes128_md5</b></li>
+			<li>服务器obfs混淆: <b>tls1.2_ticket_auth_compatible</b></li>
+			</ul>
+			中文版教程存活的不多，这里贴一个英文版教程，地址在这: <a href="https://dcamero.azurewebsites.net/shadowsocksr.html">ShadowsocksR客户端与服务端说明</a>。有需要的同学可以自行查阅或者联系管理员。
+			</p>
+
+			<p>
+				<b>Windows</b><br>
+				Windows配置和SS差不多，为了避免麻烦，推荐大家直接用客户端的global模式安全上网。这里提供一个客户端备份，以防其他地方被封。下载地址在<a href="./shadowsocksr/ShadowsocksR-win-4.9.0.zip" download>这里</a>(Version: 4.9.0, UpdateDate: 20180322)。<br>
+			</p>
+			<p>
+				<b>Android</b><br>
+				安卓的安装也比较简单，有直接的apk可以用。按照上边所述输入配置进行连接即可。备用下载地址在<a href="./shadowsocksr/shadowsocksr-android-3.5.3.apk" download>这里</a>(Version: 3.5.3, UpdateDate: 20180322)。<br>
+			</p>
+			<p>
+				<b>iOS, Linux, MacOS</b><br>
+				iOS和MacOS暂无普适性客户端，可以自行找支持的软件进行连接。<br>
+				Linux需要从GitHub上下载编译，适合高级用户使用，这里暂不赘述。<br>
+			</p>
+</html>
